@@ -82,3 +82,5 @@
 | **nevi_confidence_area**       | 面積正規化ネビス信頼度    | ネビス信頼度を面積で正規化した値         | tbp_lv_nevi_confidence（ネビス信頼度）をtbp_lv_areaMM2（面積）で割る                                                                    |
 | **nevi_confidence_color**      | 色不規則性正規化ネビス信頼度 | ネビス信頼度を色不規則性で割った値        | tbp_lv_nevi_confidence（ネビス信頼度）をtbp_lv_color_std_mean（色不規則性）で割る                                                          |
 | **tbp_lv_areaMM3**             | 3D体積近似         | 病変の面積と3D位置座標の距離の積        | 3D位置座標の距離（df['3d_position_distance']）と病変の面積（df['tbp_lv_areaMM2']）の積                                                     |
+| **nevi_confidence_age_interaction**    | ネビス信頼性と年齢の組み合わせ   | ネビス信頼度と年齢の積                   | `df["nevi_confidence_age_interaction"] = df["tbp_lv_nevi_confidence"] * df["age_approx"]`                          |
+| **combined_anatomical_site_and_age**   | 年齢と発現位置の組み合わせ       | 一般的な解剖部位と位置の組み合わせ         | `df["combined_anatomical_site_and_age"] = df["anatom_site_general"] + "_" + df["tbp_lv_location"]`                |
